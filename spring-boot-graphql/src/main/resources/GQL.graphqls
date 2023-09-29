@@ -1,0 +1,29 @@
+type User {
+  id: ID!
+  username: String!
+}
+
+type Book {
+  id: ID!
+  title: String!
+  author: String!
+  description: String
+}
+
+type CreateBookInput {
+  title: String!
+  author: String!
+  description: String
+}
+
+type Query {
+  getUser(username: String!, password: String!): User!
+
+  getBook(title: String!): Book!
+}
+
+type Mutation {
+  createUser(username: String!, password: String!): User!
+
+  createBook(bookParameters: CreateBookInput!): Book!
+}
